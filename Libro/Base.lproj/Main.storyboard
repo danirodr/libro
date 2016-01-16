@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Libro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qad-Gc-3bw">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ye4-rm-nen">
+                                <rect key="frame" x="20" y="101" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="BR3-X2-aM9">
+                                <rect key="frame" x="72" y="17" width="508" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <action selector="searchISBN:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="1pb-Kl-Aec"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gp0-fE-fW9">
+                                <rect key="frame" x="20" y="130" width="560" height="450"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsd-ad-FKR">
+                                <rect key="frame" x="20" y="21" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.98988783970000005" blue="0.77606477640000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tsd-ad-FKR" firstAttribute="centerY" secondItem="BR3-X2-aM9" secondAttribute="centerY" id="1rl-vM-PLh"/>
+                            <constraint firstItem="BR3-X2-aM9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="17" id="4iO-Ag-Duc"/>
+                            <constraint firstItem="ye4-rm-nen" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AMY-PH-4nV"/>
+                            <constraint firstItem="BR3-X2-aM9" firstAttribute="leading" secondItem="tsd-ad-FKR" secondAttribute="trailing" constant="14" id="CZq-FY-6tY"/>
+                            <constraint firstItem="tsd-ad-FKR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="1" id="Eg7-c6-iqu"/>
+                            <constraint firstItem="ye4-rm-nen" firstAttribute="leading" secondItem="Qad-Gc-3bw" secondAttribute="leading" id="FVx-mT-8JW"/>
+                            <constraint firstItem="Qad-Gc-3bw" firstAttribute="trailing" secondItem="ye4-rm-nen" secondAttribute="trailing" id="KMA-cn-QLX"/>
+                            <constraint firstItem="Gp0-fE-fW9" firstAttribute="leading" secondItem="ye4-rm-nen" secondAttribute="leading" id="SNa-JJ-GMw"/>
+                            <constraint firstItem="tsd-ad-FKR" firstAttribute="leading" secondItem="Qad-Gc-3bw" secondAttribute="leading" id="WQS-e0-s4d"/>
+                            <constraint firstItem="ye4-rm-nen" firstAttribute="trailing" secondItem="Gp0-fE-fW9" secondAttribute="trailing" id="Zsr-ew-Qxg"/>
+                            <constraint firstItem="tsd-ad-FKR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dwn-De-K5w"/>
+                            <constraint firstItem="Gp0-fE-fW9" firstAttribute="top" secondItem="ye4-rm-nen" secondAttribute="bottom" constant="8" symbolic="YES" id="fuu-RI-lQ4"/>
+                            <constraint firstAttribute="bottom" secondItem="Gp0-fE-fW9" secondAttribute="bottom" constant="20" symbolic="YES" id="kCS-Wx-bR6"/>
+                            <constraint firstItem="Qad-Gc-3bw" firstAttribute="top" secondItem="BR3-X2-aM9" secondAttribute="bottom" constant="25" id="lYJ-2T-EcC"/>
+                            <constraint firstItem="ye4-rm-nen" firstAttribute="top" secondItem="Qad-Gc-3bw" secondAttribute="bottom" constant="8" symbolic="YES" id="rFJ-TK-wZg"/>
+                            <constraint firstItem="BR3-X2-aM9" firstAttribute="trailing" secondItem="Qad-Gc-3bw" secondAttribute="trailing" id="zaR-ry-qeg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="autores" destination="ye4-rm-nen" id="SsE-En-8f9"/>
+                        <outlet property="isbn" destination="BR3-X2-aM9" id="yq6-l3-Scq"/>
+                        <outlet property="portada" destination="Gp0-fE-fW9" id="46g-Sm-oDa"/>
+                        <outlet property="titulo" destination="Qad-Gc-3bw" id="wSr-sA-91j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
 </document>
